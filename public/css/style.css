@@ -1,0 +1,11 @@
+h1 {
+    text-align: center;
+    color: cornflowerblue;
+}
+
+  .btn-primary {
+    background-color: #008CBA;
+    border: none;
+    color: white;
+    padding: 10px;
+} /* Blue */
