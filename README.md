@@ -26,3 +26,27 @@ Places
 | State  | String     |
 | Cuisines  | String     |
 | Pic  | String     |
+
+
+https://github.com/HackerUSA-CE/Rest-rant-solution/blob/main/controllers/places.js
+part 6 
+steps 1 and 2
+router.get('/', (req, res) => {
+    let places = [{
+        name: 'H-Thai-ML',
+        city: 'Seattle',
+        state: 'WA',
+        cuisines: 'Thai, Pan-Asian',
+        pic: 'http://placekitten.com/250/250'
+      }, {
+        name: 'Coding Cat Cafe',
+        city: 'Phoenix',
+        state: 'AZ',
+        cuisines: 'Coffee, Bakery',
+        pic: 'http://placekitten.com/250/250'
+      }]
+      
+    res.send('GET /places', {places})
+})
+
+to replace code in your places.js file inside of your controller folder
