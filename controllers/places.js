@@ -24,7 +24,8 @@ router.get('/new', (req, res) => {
 })
 
 router.post('/', (req, res) => {
-    res.send('Create a new place')
+    console.log(req.body)
+    res.send('POST /places')
 })
 
 router.get('/:id', (req, res) => {
