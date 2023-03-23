@@ -3,9 +3,14 @@ h1 {
     color: cornflowerblue;
 }
 
-  .btn-primary {
+.btn-primary {
     background-color: #008CBA;
     border: none;
     color: white;
     padding: 10px;
 } /* Blue */
+
+img {
+  width: 200px;
+  height: 200px;
+}

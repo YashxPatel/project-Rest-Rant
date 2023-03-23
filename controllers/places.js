@@ -6,51 +6,48 @@ router.get('/', (req, res) => {
         city: 'Seattle',
         state: 'WA',
         cuisines: 'Thai, Pan-Asian',
-        pic: 'http://placekitten.com/250/250'
-    }, {
-        name: 'Coding Cat Cafe',
-        city: 'Phoenix',
-        state: 'AZ',
-        cuisines: 'Coffee, Bakery',
-        pic: 'http://placekitten.com/250/250'
-    }]
+        pic: '/images/rest-rant-1.jpg'
+      }, {
+          name: 'Coding Cat Cafe',
+          city: 'Phoenix',
+          state: 'AZ',
+          cuisines: 'Coffee, Bakery',
+          pic: '/images/rest-rant-2.jpg'
+      }]
       
-    res.send('places/index', {places})
+      
+    res.render('places/index', {places})
 })
 
-router.get('/places', (req, res) => {
-    res.send('Index page listing all places')
-})
-
-router.get('/places/new', (req, res) => {
+router.get('/new', (req, res) => {
     res.send('New form for a place')
 })
 
-router.post('/places', (req, res) => {
+router.post('/', (req, res) => {
     res.send('Create a new place')
 })
 
-router.get('/places/:id', (req, res) => {
+router.get('/:id', (req, res) => {
     res.send('Show one place in detail (Associated rants, new rant form, delete rant button)')
 })
 
-router.get('/places/:id/edit', (req, res) => {
+router.get('/:id/edit', (req, res) => {
     res.send('Edit form for a place')
 })
 
-router.put('/places/:id', (req, res) => {
+router.put('/:id', (req, res) => {
     res.send('Make changes to existing place')
 })
 
-router.delete('/places/:id', (req, res) => {
+router.delete('/:id', (req, res) => {
     res.send('Delete a place')
 })
 
-router.post('/places/:id/rant', (req, res) => {
+router.post('/:id/rant', (req, res) => {
     res.send('Add rant to a place')
 })
 
-router.delete('/places/:id/rant/:rantId', (req, res) => {
+router.delete('/:id/rant/:rantId', (req, res) => {
     res.send('Delete a rant')
 })
 
