@@ -14,3 +14,15 @@ img {
   width: 200px;
   height: 200px;
 }
+
+.col-sm-6 {
+  position: relative;
+  display: inline-block;
+}
+
+.col-sm-6 img{
+  width: 100px;
+  height: 100px;
+  position: relative;
+  display: inline-block;
+}

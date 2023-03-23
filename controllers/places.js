@@ -20,7 +20,7 @@ router.get('/', (req, res) => {
 })
 
 router.get('/new', (req, res) => {
-    res.send('New form for a place')
+    res.render('places/new')
 })
 
 router.post('/', (req, res) => {
