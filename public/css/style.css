@@ -3,21 +3,47 @@ h1 {
     color: cornflowerblue;
 }
 
+html {
+  height: 100%;
+}
+
+/*body {
+  min-height: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto;
+}*/
+
+body {
+  background-color: lightblue;
+  text-align: center;
+}
+
+main {
+  margin-right: 20px;
+  margin-left: 20px;
+  background-color: white;
+}
+
 .btn-primary {
-    background-color: #008CBA;
+    background-color: cornflowerblue;
     border: none;
     color: white;
     padding: 10px;
 } /* Blue */
 
-img {
+/*img {
   width: 200px;
   height: 200px;
 }
 
-.col-sm-6 {
-  position: relative;
-  display: inline-block;
+.row {
+  display: grid;
+  grid: repeat(2, 250px) / auto-flow 250px;
+}
+
+.row > div {
+  width: 200px;
+  height: 200px;
 }
 
 .col-sm-6 img{
@@ -25,4 +51,37 @@ img {
   height: 100px;
   position: relative;
   display: inline-block;
+}*/
+nav {
+  background-color: cornflowerblue;
+  padding: 10px;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+}
+
+nav li {
+  display: inline;
+  margin-right: 25px;
+}
+
+nav a {
+  color: white;
+  font-size: 1.5em;
+}
+
+nav a:hover {
+  color: pink;
+  text-decoration: none;
+}
+
+.footer {
+  height: 50px;
+  background-color: brown;
+  color: white;
+  text-align: center;
+  grid-row-start: 2;
+  grid-row-end: 3;
 }
