@@ -27,9 +27,18 @@ router.post('/', (req, res) => {
 })  
 
 router.get('/:id', (req, res) => {
-    res.send('Show one place in detail (Associated rants, new rant form, delete rant button)')
+    let id = Number(req.params.id)
+    if (isNaN(id)) {
+      res.render('error404')
+    }
+    else if (!places[id]) {
+      res.render('error404')
+    }
+    else {
+      res.render('places/show')
+    }
 })
-
+  
 router.get('/:id/edit', (req, res) => {
     res.send('Edit form for a place')
 })
@@ -51,3 +60,6 @@ router.delete('/:id/rant/:rantId', (req, res) => {
 })
 
 module.exports = router
+
+
+  
