@@ -24,7 +24,7 @@ function Def (html) {
               </ul>
             </nav>
                 {html.children}
-                <footer className="footer">Resume | Portfolio | Linkedin </footer>
+                <footer className="footer">Resume | Portfolio | Linkedin | <span className='author'>Author : Yash Patel</span></footer>
             </body>
         </html>
     )
