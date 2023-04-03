@@ -10,6 +10,9 @@ function index (data) {
             {place.name}
           </a>
         </h2>
+        <p className="text-center">Sinse'
+          {place.founded}
+        </p>
         <p className="text-center">
           {place.cuisines}
         </p>
