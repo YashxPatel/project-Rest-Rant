@@ -7,20 +7,28 @@ function show (data) {
       No comments yet!
     </h3>
   )
+  let rating = (
+    <h3 className="inactive">
+      Not yet rated
+    </h3>
+  )
   if (data.place.comments.length) {
-    comments = data.place.comments.map(c => {
-      return (
-        <div className="border">
-          <h2 className="rant">{c.rant ? 'Rant! ðŸ˜¡' : 'Rave! ðŸ˜»'}</h2>
-          <h4>{c.content}</h4>
-          <h3>
-            <stong>- {c.author}</stong>
-          </h3>
-          <h4>Rating: {c.stars}</h4>
-        </div>
-      )
-    })
+    let sumRatings = data.place.comments.reduce((tot, c) => {
+      return tot + c.stars
+    }, 0)
+    let averageRating = Math.round(sumRatings / data.place.comments.length)
+    let stars = ''
+    for (let i = 0; i < averageRating; i++) {
+      stars += "\u2606"
+    }
+    rating = (
+      <h3>
+        {stars} stars
+      </h3>
+    )
   }
+  
+  
   return (
       <Def>
         <main>
@@ -30,8 +38,11 @@ function show (data) {
             <h3>
               Located in {data.place.city}, {data.place.state}
             </h3>
-            <h1>Rating: Not rated</h1>
-            
+            <h2>
+              Rating
+            </h2>
+            {rating}
+            <br/>
             <h3>
               {data.place.showEstablished()}
             </h3>
@@ -81,4 +92,20 @@ function show (data) {
 }
 
 module.exports = show
+
+
+/*
+comments = data.place.comments.map(c => {
+  return (
+    <div className="border">
+      <h2 className="rant">{c.rant ? 'Rant! ðŸ˜¡' : 'Rave! ðŸ˜»'}</h2>
+      <h4>{c.content}</h4>
+      <h3>
+        <stong>- {c.author}</stong>
+      </h3>
+      <h4>Rating: {c.stars}</h4>
+    </div>
+  )
+})
+*/
 
